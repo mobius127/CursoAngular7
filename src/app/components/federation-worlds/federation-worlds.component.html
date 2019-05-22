@@ -1,0 +1,58 @@
+
+<h1>Planetas de la Federación</h1>
+
+<div class="ui-g">
+  <div class="ui-g-3">
+    <label for="fullName">Nombre de Planeta: </label>
+  </div>
+  <div class="ui-g-9">
+    <input id="fullName" type="text" [(ngModel)]="world.fullName" />
+  </div>
+</div>
+<div class="ui-g">
+  <div class="ui-g-3">
+    <label for="fullName">Descripción: </label>
+  </div>
+  <div class="ui-g-9">
+    <input id="fullName" type="text" [(ngModel)]="world.worldClass" />
+  </div>
+</div>
+<div class="ui-g">
+  <div class="ui-g-3">
+    <label for="fullName">Url: </label>
+  </div>
+  <div class="ui-g-9">
+    <input id="fullName" type="text" [(ngModel)]="world.imageUrl" />
+  </div>
+</div>
+
+<div class="ui-g">
+  <div class="ui-g-12">
+    <button (click)="saveNewWorld()">Guardar</button>
+    <button (click)="clear()">Limpiar</button>
+  </div>
+</div>
+
+<p-dataView [value]="worldsList">
+  <ng-template let-world pTemplate="listItem">
+    <div class="ui-g" style="padding: 2em;border-bottom: 1px solid #d9d9d9">
+      <div class="ui-g-12 ui-md-3" style="text-align:center">
+        <img src="{{world.imageUrl}}" style="height: 8em;" />
+      </div>
+      <div class="ui-g-12 ui-md-8 car-details">
+        <div class="ui-g">
+          <div class="ui-g-3 ui-sm-6">Nombre:</div>
+          <div class="ui-g-9 ui-sm-6">
+            <b>{{ world.fullName }}</b>
+          </div>
+
+          <div class="ui-g-3 ui-sm-6">Descripción:</div>
+          <div class="ui-g-9 ui-sm-6">
+            <b>{{ world.worldClass }}</b>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</p-dataView>
+
